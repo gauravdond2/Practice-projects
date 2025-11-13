@@ -1,0 +1,15 @@
+<%- include('partials/head') %>
+</head>
+<body>
+   <%- include('./partials/header') %>
+   <h1>Here are our registered Homes</h1>
+   <ul>
+    <% registeredHomes.forEach(home =>{ %>
+        <li><%= home.homeName %></li>
+   <% }) %>
+   </ul>
+
+       <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>
