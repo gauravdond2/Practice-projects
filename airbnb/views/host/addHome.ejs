@@ -1,0 +1,19 @@
+<%- include('../partials/head') %>
+</head>
+<body>
+   <%- include('../partials/header') %>
+
+   <form action="/homeadded" method="post">
+    <input type="text" name="homeName" placeholder="Home Name" class="border p-2 mb-4 w-full" >
+    <input type="text" name="location" placeholder="Location" class="border p-2 mb-4 w-full">
+    <input type="text" name="rating" placeholder="Rate this home" class="border p-2 mb-4 w-full">
+    <input type="text" name="photo" id="photo" class="border p-2 mb-4 w-full">
+    <input type="number" name="pricePerNight" placeholder="Price per Night" class="border p-2 mb-4 w-full">
+
+    <button type="submit">Add Home</button>
+   </form>
+
+       <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>

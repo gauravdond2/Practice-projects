@@ -1,0 +1,50 @@
+/* style.css */
+
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+/* Page heading */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+/* Chat container */
+.chat {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* Sender and receiver text */
+.chat p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Message styling */
+.chat h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: normal;
+    color: #2c3e50;
+}
+
+/* Timestamp */
+.chat .timestamp {
+    font-size: 12px;
+    color: #888;
+    text-align: right;
+}
