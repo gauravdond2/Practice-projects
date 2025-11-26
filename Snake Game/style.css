@@ -1,4 +1,98 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+html, body{
+   height: 100%;
+   width: 100%;
+   background-color: #0E1629;
+   overflow: hidden;
+}
+
+h3{
+   color:#BFDBFE;
+}
+
+#gamearea {
+    width: 454px;
+    height: 454px; 
+    border: 2px solid #0A153C; /* Border around the game area */
+    background-color: #020617; /* Background color for the game area */
+    position: relative; /* Allows absolute positioning of blocks if needed */
+    margin: 20px auto;
+    display: grid; /* Use grid layout for uniform arrangement */
+    grid-template-columns: repeat(auto-fill, 30px); /* Create columns of 20px */
+    grid-auto-rows: 30px; /* Set row height to 30px */
+}
+
+.block {
+    width: 30px; /* Block width */
+    height: 30px; /* Block height */
+    background-color:#0A153C; /* Color of the snake blocks */
+    border: 1px solid #020617; /* Optional: border for better visibility */
+    box-sizing: border-box; /* Include padding and border in element's total 
+    width and height */
+    border-radius: 50px;
+}
+
+.snake {
+    background-color:#22C55E; /* Color for snake segments */
+}
+
+.food {
+    background-color :#F97316; /* Color for food */
+}   
+
+
+
+/* info boxes container style*/
+
+.infos{
+    width: 454px; /* match #gamearea width for alignment */
+    margin: 18px auto 0; 
+    display: flex;
+    justify-content: center; /* center the info box above game area */
+    gap: 12px;
+    pointer-events: none; /* avoid capturing accidental clicks while playing */
+}
+
+.info{
+    pointer-events: auto;
+    background: rgba(10,21,60,0.6);
+    padding: 10px 14px;
+    border-radius: 8px;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    border: 1px solid rgba(255,255,255,0.04);
+    box-shadow: 0 4px 14px rgba(2,6,23,0.6);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* headings and score numbers */
+.info h3{
+    font-size: 14px;
+    font-weight: 600;
+    color: #BFDBFE; /* keeps your existing color */
+    white-space: nowrap;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.info h3 span{
+    color: #E6F6FF;
+    font-weight: 700;
+    min-width: 28px;
+    text-align: left;
+    display: inline-block;
+}
+
+/* small responsive tweak */
+@media (max-width: 500px){
+    .infos{ width: calc(100% - 40px); }
+    .info{ gap: 12px; padding: 8px 10px; }
+    .info h3{ font-size: 13px; }
+}
+
