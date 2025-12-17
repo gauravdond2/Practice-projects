@@ -15,6 +15,13 @@
                     <p class="text-yellow-500 mb-2">Rating: <%= home.rating %></p>
                     <p class="text-lg font-bold text-green-600">$<%= home.pricePerNight %> / night</p>
                 </div>
+            <a href="/homes/<%= home.id %>" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded shadow transition-colors duration-200">Details</a>
+            <form action="/addFavouriteHome" method="post">
+                <input type="hidden" name="id" value="<%= home.id %>"/>
+                <button type="submit">Add to favourite</button>                
+            </form>
+            
+
             </div>
         <% }) %>
     </div>

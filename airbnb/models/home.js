@@ -1,6 +1,7 @@
 const rootdir = require("../utils/utilpath");
 const fs = require('fs');
 const path = require('path');
+const { json } = require("stream/consumers");
 
 const registeredHomes = [];
 module.exports = class Home {
@@ -21,10 +22,22 @@ module.exports = class Home {
         });
         })           
     }
+    static fetchById(id , callback){
+        const filepath =path.join(rootdir,'Data', 'homes.json');
+       fs.readFile(filepath,(err,data) =>{
+           if(!err){
+            const homeData = JSON.parse(data);
+           const home = homeData.find((h)=>h.id === id);
+            callback(home);
+           }else{
+            callback(undefined);
+           }
+        })
+    }
     static fetchAll(callback){
         const filepath =path.join(rootdir,'Data', 'homes.json');
         fs.readFile(filepath,(err,data) =>{
-           if(!err){
+           if(!err && data.length >0){
             callback( JSON.parse(data));
            }else{
             callback([]);
