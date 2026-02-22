@@ -1,0 +1,12 @@
+{
+  "ignore": [
+    "home.json",
+    "favourites.json",
+    "logs/*",
+    "public/assets/*",
+    "temp.js",
+    "**/test/**"
+  ],
+  "watch": ["src/**/*"],
+  "ext": "js,mjs,json"
+}

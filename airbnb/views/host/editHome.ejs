@@ -1,0 +1,24 @@
+<%- include('../partials/head') %>
+</head>
+<body>
+   <%- include('../partials/header') %>
+   
+<div class="flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-md">
+        <h2 class="text-3xl font-bold mb-6 text-center"><%= editing ? "Edit" : "Add" %> Home</h2>
+        <form action="<%= editing ? '/edithome' : '/homeadded' %>" method="post">
+           <input type="text" name="id" id="id" value="<%= editing ? home.id : ''  %>">
+            <input type="text" value="<%= editing ? home.homeName : '' %>" name="homeName" placeholder="Home Name" class="border p-2 mb-4 w-full">            
+            <input type="text" value="<%= editing ? home.rating : '' %>"  name="rating" placeholder="Rate this home" class="border p-2 mb-4 w-full">
+            <input type="text" value="<%= editing ? home.location : '' %>" name="location" placeholder="Location" class="border p-2 mb-4 w-full">
+            <input type="text" value="<%= editing ? home.photo : '' %>" name="photo" id="photo" class="border p-2 mb-4 w-full">
+            <input type="number" value="<%= editing ? home.pricePerNight : '' %>" name="pricePerNight" placeholder="Price per Night" class="border p-2 mb-4 w-full">
+            <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded"><%= editing ? "Edit" : "submit" %></button>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>
